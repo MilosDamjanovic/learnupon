@@ -1,0 +1,74 @@
+.filter-by-something {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 2.4rem 0.8rem;
+  .select-all-users {
+    display: flex;
+    .user-count {
+      padding-left: 0.8rem;
+      .title,
+      .number-of-users {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .search-and-sort {
+    display: flex;
+    grid-column: 2 / 5;
+    justify-content: space-around;
+    .filter {
+      display: flex;
+      flex-basis: 25%;
+      position: relative;
+      max-width: 22rem;
+      .search {
+        position: absolute;
+        left: 0;
+        bottom: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          top: 0.6rem;
+          width: 1.2rem;
+          height: 1.6rem;
+          opacity: 0.6;
+          margin-left: 0.2rem;
+        }
+      }
+      input {
+        width: 100%;
+        background-color: transparent;
+        border: 1.6px solid rgba(var(--border-color), 1);
+        line-height: 1.4rem;
+        padding-left: 2.8rem;
+        transition: 0.3s;
+        &::placeholder {
+          padding-top: 0.6rem;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .create-or-filter {
+      width: 100%;
+      display: flex;
+      flex-basis: 75%;
+      justify-content: space-evenly;
+      margin-left: 0.8rem;
+      button {
+        margin-left: 0.4rem;
+        margin-right: 0.4rem;
+      }
+    }
+  }
+  .user-actions {
+    display: flex;
+    grid-column: 5 / -1;
+    width: 60%;
+    justify-content: space-around;
+    justify-self: flex-end;
+  }
+}

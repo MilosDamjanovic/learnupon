@@ -1,0 +1,13 @@
+<section class="users">
+  <div class="filter">
+    <lu-filter> </lu-filter>
+  </div>
+  <section class="user-data">
+    <ng-container *ngFor="let user of users">
+      <lu-user [user]="user"> </lu-user>
+    </ng-container>
+  </section>
+  <section class="paginator">
+    <lu-paginator></lu-paginator>
+  </section>
+</section>

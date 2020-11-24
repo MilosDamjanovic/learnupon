@@ -1,0 +1,40 @@
+<section class="user-item">
+
+  <section class="user-info">
+    <div class="checkbox">
+      <mat-checkbox class="example-margin"></mat-checkbox>
+    </div>
+    <div class="user">
+      <img class="avatar" [src]="getSafeAvatar('https://placekitten.com/g/200/300')" alt="user-avatar" />
+      <div class="info">
+        <span class="username"> {{user.first_name}} {{user.last_name}} </span>
+        <span class="email"> {{user.email}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="icons">
+    <div class="icon articles">
+      <!-- NUMBERS AS VALUES FROM SUBJECTS THINK ABOUT IT! -->
+      <span class="number"> 4 </span>
+      <span class="property material-icons">format_align_justify</span>
+    </div>
+    <div class="icon users">
+      <span class="number"> 2 </span>
+      <span class="property material-icons">person</span>
+    </div>
+    <div class="icon groups">
+      <span class="number"> 5 </span>
+      <span class="property material-icons">group</span>
+    </div>
+  </section>
+
+  <section class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+
+    </mat-menu>
+  </section>
+</section>

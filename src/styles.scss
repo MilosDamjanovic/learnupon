@@ -1,0 +1,14 @@
+@import 'theme-base';
+@import './styles/core/base';
+@import './styles/core/material';
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: rgba(var(--primary), .7);
+}

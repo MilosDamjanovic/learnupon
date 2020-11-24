@@ -1,0 +1,51 @@
+<section class="dialog-container">
+  <h1 class="title"> Create a new user </h1>
+  <mat-card class="create-user-card">
+    <mat-card-content>
+      <form class="create-user-form" [formGroup]="form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="first_name" placeholder="First name" name="name" autocomplete="off" required>
+          <mat-error *ngIf="fnameControl.invalid">{{getFullNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="last_name" placeholder="Last Name" name="lastName" autocomplete="off"
+            required>
+          <mat-error *ngIf="lnameControl.invalid">{{getFullNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" placeholder="Last Name" name="lastName" autocomplete="off"
+            required>
+          <mat-error *ngIf="usernameControl.invalid">{{getFullNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Email" name="email" autocomplete="off" required>
+          <mat-error *ngIf="emailControl.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Password" name="password" required>
+          <mat-error *ngIf="passwordControl.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="no-line">
+          <mat-select formControlName="language" placeholder="Choose your language">
+            <mat-option *ngFor="let lang of languages" [value]="lang" (click)="onSelectedLang(lang)">
+              <span> {{ lang }} </span>
+            </mat-option>
+          </mat-select>
+          <mat-error class="field-error" *ngIf="getNoSelectedLanguageErrorMessage()"> {{getLanguageErrorMessage()}}
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- REVISIT BUTTONS-->
+      <button type="submit" [class.disabled]="!form.valid" mat-raised-button (click)="createUser()"
+        color="primary">CREATE</button>
+      <button type="button" mat-raised-button (click)="cancel()" color="warn">CANCEL</button>
+    </mat-card-actions>
+  </mat-card>
+</section>

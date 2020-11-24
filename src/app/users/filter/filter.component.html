@@ -1,0 +1,45 @@
+<section class="filter-by-something">
+  <!-- COLOR MAT INK BAR OF THE TABS-->
+
+  <div class="select-all-users">
+    <mat-checkbox> </mat-checkbox>
+    <div class="user-count">
+      <span class="number-of-users"> 6 </span> <!-- TODO COUNT THE REAL NUMBER -->
+      <span class="title"> Users </span>
+    </div>
+  </div>
+
+  <div class="search-and-sort">
+
+    <div class="filter">
+      <div class="search">
+        <span class="icon material-icons">
+          search
+        </span>
+      </div>
+      <input type="text" class="filter-users" placeholder="Search..." />
+    </div>
+
+    <div class="create-or-filter">
+      <lu-button [buttonConfig]="textBtnConfig" [title]="'Type: All'" (buttonClicked)="onClickEventReceived($event)">
+      </lu-button>
+      <lu-button [buttonConfig]="textBtnConfig" [title]="'Sort A-Z'" (buttonClicked)="onClickEventReceived($event)">
+      </lu-button>
+      <lu-button [buttonConfig]="textBtnConfig" [title]="'Group: All'" (buttonClicked)="onClickEventReceived($event)">
+      </lu-button>
+      <lu-button [buttonConfig]="menuBtnConfig" [icon]="'add'" [title]="'Add Filter'"
+        (buttonClicked)="onClickEventReceived($event)">
+      </lu-button>
+    </div>
+  </div>
+
+  <div class="user-actions">
+    <lu-button [buttonConfig]="menuBtnConfig" [icon]="'add'" [title]="'Create'"
+      (buttonClicked)="onClickEventReceived($event)">
+    </lu-button>
+    <lu-button [buttonConfig]="menuBtnConfig" [icon]="'more_vert'" [title]="'Actions'"
+      (buttonClicked)="onClickEventReceived($event)">
+    </lu-button>
+  </div>
+
+</section>

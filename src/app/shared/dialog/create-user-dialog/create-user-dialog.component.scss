@@ -1,0 +1,34 @@
+.dialog-container {
+  h1.title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.049rem;
+    font-size: 2.2rem;
+    color: rgba(var(--primary), 1);
+    font-weight: 600;
+  }
+  .create-user-card {
+    ::ng-deep {
+      .mat-card-actions {
+        display: flex;
+        flex-direction: row;
+        button {
+          width: 100%;
+          margin-top: 0.4rem;
+          margin-bottom: 0.8rem;
+          &.disabled {
+            background-color: rgba(var(--background-side-nav), 0.6);
+          }
+        }
+      }
+      .create-user-form {
+        mat-form-field {
+          width: 100%;
+        }
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+          color: rgba(var(--primary), 1.0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.home {
+  width: calc(100% - 60px);
+  float: right;
+  .container-tab ::ng-deep .mat-tab-group {
+    background-color: rgba(var(--foreground), 1);
+    .mat-tab-labels {
+      .mat-tab-label-active {
+        color: rgba(var(--primary), 1);
+      }
+    }
+    .mat-tab-header {
+      border-bottom: none
+    }
+    .mat-tab-body-content {
+      background-color: rgba(var(--primary), .7);
+      border-bottom: none;
+      overflow: hidden;
+    }
+    .mat-ink-bar {
+      background-color: rgba(var(--primary), 1);
+    }
+  }
+}
