@@ -6,7 +6,13 @@ import { DialogService } from './../../shared/dialog/dialog.service';
 import { Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { backgroundTransparent, defaultBtnConf, imgBtnConf, imgColor } from 'src/app/shared/button/button-config';
+import {
+  backgroundGrey, backgroundPrimary, backgroundTransparent,
+  defaultBtnConf, fontBold, imgBtnConf, imgGreyColor, imgPrimaryColor,
+  imgWhiteColor, noBorders,
+  iconAlignment,
+  borderBtn
+} from 'src/app/shared/button/button-config';
 
 @Component({
   selector: 'lu-filter',
@@ -14,7 +20,6 @@ import { backgroundTransparent, defaultBtnConf, imgBtnConf, imgColor } from 'src
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnDestroy {
-  /** button scroll problem !! */
   private unsubscribe$: Subject<any> = new Subject();
 
   constructor(
@@ -23,44 +28,44 @@ export class FilterComponent implements OnDestroy {
     private btnService: ButtonService
   ) { }
 
-  public textBtnConfig = {
-    styles: this.btnService.createBtn(defaultBtnConf)(backgroundTransparent)(imgBtnConf)(imgColor),
+  public noBorderBackgroundBtnConfig = {
+    styles: this.btnService.createBtn(defaultBtnConf)(noBorders)(backgroundTransparent)(imgPrimaryColor),
+    iconStyles: { ...imgBtnConf, ...imgPrimaryColor, },
+    action: 'Something',
+    image: 'Click Here' // better way...
+  };
+
+  public transparentBackgroundBtnConfig = {
+    styles: this.btnService.createBtn(defaultBtnConf)(backgroundTransparent)(borderBtn)(null),
+    action: 'Something',
     text: 'Click Here' // better way...
   };
 
-  public menuBtnConfig = {
-    styles: {
-      width: '12rem',
-      overflow: 'auto',
-      maxWidth: '16rem',
-      height: '2.8rem',
-      backgroundColor: 'transparent',
-      fontSize: '1.6rem',
-      fontWeight: '400',
-      borderRadius: 'rgba(var(--border-radius), 1)',
-      boxShadow: 'none',
-      textDecoration: 'none',
-      position: 'relative'
-    },
-    iconStyles: {
-      position: 'absolute',
-      color: ''
-    },
-    image: 'Click Here+'
+  public primaryImageBackgroundBtnConfig = {
+    styles: this.btnService.createBtn(defaultBtnConf)(backgroundPrimary)(imgWhiteColor)(noBorders),
+    iconStyles: { ...imgBtnConf, ...iconAlignment, ...imgWhiteColor, ...fontBold },
+    image: 'Create' // better way...
   };
 
-  public openCreateUserDialog(event: any): void {
-    event.stopPropagation();
-    event.preventDefault();
+  public greyImageBackgroundBtnConfig = {
+    styles: this.btnService.createBtn(defaultBtnConf)(backgroundGrey)(backgroundGrey)(noBorders),
+    iconStyles: {
+      ...imgGreyColor, ...imgBtnConf, ...iconAlignment
+    },
+    image: 'Action' // better way...
+  };
+
+  public onClickEventReceived(event: string): void {
+    if (event === 'openCreateUserDialog') {
+      this.openCreateUserDialog();
+    }
+  }
+
+  private openCreateUserDialog(): void {
     this.dialogService.open(CreateUserDialogComponent, { ...createUserDialogConfig })
       .subscribe({
         next: this.createUser.bind(this)
       });
-  }
-
-  onClickEventReceived(event: any): void {
-    // this.message = event;
-    console.log(event);
   }
 
   private createUser(user: any): void {

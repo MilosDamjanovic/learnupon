@@ -10,16 +10,21 @@ export class ButtonComponent {
   @Input() buttonConfig: any;
   @Input() title = '';
   @Input() icon = '';
+  @Input() action = '';
   @Output() buttonClicked = new EventEmitter<any>();
 
   constructor() { }
 
   public onTextBtnClick(event: any): void {
-    this.buttonClicked.emit(event);
+    event.stopPropagation();
+    event.preventDefault();
+    this.buttonClicked.emit(this.action);
   }
 
   public onImgBtnClick(event: any): void {
-    this.buttonClicked.emit(event);
+    event.stopPropagation();
+    event.preventDefault();
+    this.buttonClicked.emit(this.action);
   }
 
 }

@@ -28,7 +28,6 @@ export class CreateUserDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dialogData: CreateUserDialogData,
     private fb: FormBuilder
   ) {
-    console.log(dialogData);
   }
 
   ngOnInit(): void {

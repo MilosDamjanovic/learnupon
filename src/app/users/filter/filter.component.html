@@ -21,23 +21,28 @@
     </div>
 
     <div class="create-or-filter">
-      <lu-button [buttonConfig]="textBtnConfig" [title]="'Type: All'" (buttonClicked)="onClickEventReceived($event)">
+      <lu-button [buttonConfig]="transparentBackgroundBtnConfig" [action]="'typeAllFilter'" [title]="'Type: All'"
+        (buttonClicked)="onClickEventReceived($event)">
       </lu-button>
-      <lu-button [buttonConfig]="textBtnConfig" [title]="'Sort A-Z'" (buttonClicked)="onClickEventReceived($event)">
+      <lu-button [buttonConfig]="transparentBackgroundBtnConfig" [action]="'sort'" [title]="'Sort A-Z'"
+        (buttonClicked)="onClickEventReceived($event)">
       </lu-button>
-      <lu-button [buttonConfig]="textBtnConfig" [title]="'Group: All'" (buttonClicked)="onClickEventReceived($event)">
+      <lu-button [buttonConfig]="transparentBackgroundBtnConfig" [action]="'GroupAll'" [title]="'Group: All'"
+        (buttonClicked)="onClickEventReceived($event)">
       </lu-button>
-      <lu-button [buttonConfig]="menuBtnConfig" [icon]="'add'" [title]="'Add Filter'"
+      <lu-button [buttonConfig]="noBorderBackgroundBtnConfig" [action]="'AddFilter'" [icon]="'add'" [title]="'Add Filter'"
         (buttonClicked)="onClickEventReceived($event)">
       </lu-button>
     </div>
   </div>
 
   <div class="user-actions">
-    <lu-button [buttonConfig]="menuBtnConfig" [icon]="'add'" [title]="'Create'"
+    <lu-button [buttonConfig]="primaryImageBackgroundBtnConfig" [action]="'openCreateUserDialog'" [icon]="'add'"
+      [title]="'Create'"
       (buttonClicked)="onClickEventReceived($event)">
     </lu-button>
-    <lu-button [buttonConfig]="menuBtnConfig" [icon]="'more_vert'" [title]="'Actions'"
+    <lu-button [buttonConfig]="greyImageBackgroundBtnConfig" [action]="'openActionUserDialog'" [icon]="'more_vert'"
+      [title]="'Actions'"
       (buttonClicked)="onClickEventReceived($event)">
     </lu-button>
   </div>

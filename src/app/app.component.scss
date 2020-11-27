@@ -1,7 +1,9 @@
 .container {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   .nav-user-info {
-    width: calc(100% - 60px);
-    float: right;
+    margin-left: 6rem;
     .company {
       display: flex;
       .logo {
@@ -43,5 +45,9 @@
     .example-spacer {
       flex: 1 1 auto;
     }
+  }
+  .app {
+    min-height: 100vh;
+    height: 100%;
   }
 }

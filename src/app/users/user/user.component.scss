@@ -72,5 +72,8 @@
 
   .menu {
     order: 5;
+    .mat-icon {
+        color: rgb(var(--primary), 1);
+    }
   }
 }

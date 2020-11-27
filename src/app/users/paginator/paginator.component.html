@@ -1,17 +1,15 @@
 <div id="pag-cover">
   <div id="pg-links">
     <div class="td arr-cover">
-      <div class="arrow" id="l-arrow"><span class="material-icons">chevron_left</span></div>
+      <div class="arrow" (click)="onNavigateClick(-1)"><span class="material-icons">navigate_before</span></div>
     </div>
     <div class="td">
       <div id="links">
-        <div class="pg-link"><span>4</span></div>
-        <div class="pg-link" id="m-pg-link"><span>5</span></div>
-        <div class="pg-link"><span>6</span></div>
+        <div class="pg-link" id="m-pg-link"><span>{{step}}</span></div>
       </div>
     </div>
     <div class="td arr-cover">
-      <div class="arrow" id="r-arrow"><span class="material-icons">chevron_right</span></div>
+      <div class="arrow" (click)="onNavigateClick(+1)"><span class="material-icons">navigate_next</span></div>
     </div>
   </div>
 </div>

@@ -1,9 +1,12 @@
 .filter-by-something {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  width: inherit;
+  // grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   padding: 2.4rem 0.8rem;
   .select-all-users {
     display: flex;
+    align-items: center;
     .user-count {
       padding-left: 0.8rem;
       .title,
@@ -16,17 +19,16 @@
 
   .search-and-sort {
     display: flex;
-    grid-column: 2 / 5;
+    grid-column: 2 / 8;
     justify-content: space-around;
     .filter {
       display: flex;
-      flex-basis: 25%;
+      flex-basis: 30%;
       position: relative;
-      max-width: 22rem;
       .search {
         position: absolute;
         left: 0;
-        bottom: 9px;
+        bottom: 14px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,11 +55,9 @@
     }
 
     .create-or-filter {
-      width: 100%;
       display: flex;
-      flex-basis: 75%;
+      flex-basis: 70%;
       justify-content: space-evenly;
-      margin-left: 0.8rem;
       button {
         margin-left: 0.4rem;
         margin-right: 0.4rem;
@@ -66,8 +66,8 @@
   }
   .user-actions {
     display: flex;
-    grid-column: 5 / -1;
-    width: 60%;
+    grid-column: 8 / -1;
+    width: 50%;
     justify-content: space-around;
     justify-self: flex-end;
   }

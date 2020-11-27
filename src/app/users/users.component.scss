@@ -1,6 +1,8 @@
 .users {
   height: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
   .user-data {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
@@ -8,14 +10,16 @@
     width: inherit;
   }
   .filter {
+    width: inherit;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
     background-color: white;
   }
   .paginator {
+    margin-top: auto;
     display: flex;
     justify-content: center;
-    height: 4rem;
+    height: 5rem;
     width: 100%;
   }
 }
