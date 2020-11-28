@@ -2,50 +2,6 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  .nav-user-info {
-    margin-left: 6rem;
-    .company {
-      display: flex;
-      .logo {
-        width: 30px;
-      }
-      .title {
-        padding-left: 0.8rem;
-      }
-    }
-
-    .user-toolbar-actions {
-      height: 100%;
-      display: flex;
-      justify-items: center;
-      align-items: stretch;
-      .icon {
-        display: inherit;
-        align-items: center;
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-      }
-    }
-    .user-avatar {
-      height: 100%;
-      img {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        display: block;
-        float: right;
-      }
-    }
-  }
-
-  &::ng-deep .mat-toolbar {
-    &.mat-primary {
-      background-color: rgba(var(--background-side-nav), 1);
-    }
-    .example-spacer {
-      flex: 1 1 auto;
-    }
-  }
   .app {
     min-height: 100vh;
     height: 100%;

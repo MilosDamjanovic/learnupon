@@ -17,6 +17,10 @@
     }
   }
 
+  .example-spacer {
+    grid-column: 8 / 13;
+  }
+
   .search-and-sort {
     display: flex;
     grid-column: 2 / 8;
@@ -28,7 +32,7 @@
       .search {
         position: absolute;
         left: 0;
-        bottom: 14px;
+        bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -65,9 +69,9 @@
     }
   }
   .user-actions {
+    grid-column: span 2;
+    width: 100%;
     display: flex;
-    grid-column: 8 / -1;
-    width: 50%;
     justify-content: space-around;
     justify-self: flex-end;
   }

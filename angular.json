@@ -36,7 +36,7 @@
             ],
             "scripts": [],
 						"stylePreprocessorOptions": {
-							"includePaths": ["src/styles", "src/styles/mixins"]
+							"includePaths": ["src/styles", "src/styles/_shared"]
 						}
           },
           "configurations": {
@@ -98,9 +98,11 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles", "src/styles/_shared"]
+						},
             "scripts": []
           }
         },

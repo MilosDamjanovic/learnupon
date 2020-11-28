@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { User } from 'src/app/model/user.model';
+import { User, UserItemResponse } from 'src/app/model/user.model';
 
 @Component({
   selector: 'lu-user',
@@ -9,7 +9,7 @@ import { User } from 'src/app/model/user.model';
 })
 export class UserComponent implements OnInit {
   @Input()
-  user!: User;
+  user!: UserItemResponse;
 
   constructor(private sanitizer: DomSanitizer) { }
 

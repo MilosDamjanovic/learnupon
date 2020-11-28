@@ -7,18 +7,20 @@ export const defaultBtnConf = {
   overflow: 'auto',
   borderRadius: 'var(--border-radius)',
   fontSize: '1.6rem',
-  height: '3.6rem',
+  height: '2.8rem',
   letterSpacing: '0.04rem',
   outline: '0',
   padding: '0',
-  textAlign: 'center'
+  textAlign: 'center',
+  cursor: 'default'
 };
 
 export const imgBtnConf = {
   position: 'absolute',
   fontWeight: '600',
   zIndex: '999',
-  top: '30px',
+  top: '25px',
+  cursor: 'default'
 };
 
 export const borderBtn = {
@@ -31,7 +33,7 @@ export const iconAlignment = {
 
 export const fontBold = {
   fontWeight: '600'
-}
+};
 
 export const backgroundTransparent = {
   backgroundColor: 'transparent',

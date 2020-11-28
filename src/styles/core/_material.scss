@@ -1,0 +1,12 @@
+.mat-checkbox-checked .mat-checkbox-background,
+.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: rgba(var(--primary), 1) !important;
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgba(var(--primary), 1) !important;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: rgba(var(--background-side-nav), 1);
+}

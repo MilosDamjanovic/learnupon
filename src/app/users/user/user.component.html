@@ -2,7 +2,7 @@
 
   <section class="user-info">
     <div class="checkbox">
-      <mat-checkbox class="example-margin"></mat-checkbox>
+      <mat-checkbox class="example-margin" [(ngModel)]="user.isSelected"></mat-checkbox>
     </div>
     <div class="user">
       <img class="avatar" [src]="getSafeAvatar('https://placekitten.com/g/200/300')" alt="user-avatar" />
@@ -16,15 +16,15 @@
   <section class="icons">
     <div class="icon articles">
       <!-- NUMBERS AS VALUES FROM SUBJECTS THINK ABOUT IT! -->
-      <span class="number"> 4 </span>
+      <span class="number"> {{user.number_of_enrollments}} </span>
       <span class="property material-icons">format_align_justify</span>
     </div>
     <div class="icon users">
-      <span class="number"> 2 </span>
+      <span class="number"> {{user.sign_in_count}} </span>
       <span class="property material-icons">person</span>
     </div>
     <div class="icon groups">
-      <span class="number"> 5 </span>
+      <span class="number"> {{user.number_of_enrollments_accessed}} </span>
       <span class="property material-icons">group</span>
     </div>
   </section>
@@ -34,7 +34,14 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-
+      <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
     </mat-menu>
   </section>
 </section>

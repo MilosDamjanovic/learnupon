@@ -2,9 +2,9 @@
   <!-- COLOR MAT INK BAR OF THE TABS-->
 
   <div class="select-all-users">
-    <mat-checkbox> </mat-checkbox>
+    <mat-checkbox (change)="onSelectAll($event)"> </mat-checkbox>
     <div class="user-count">
-      <span class="number-of-users"> 6 </span> <!-- TODO COUNT THE REAL NUMBER -->
+      <span class="number-of-users"> {{numberOfUsers}} </span>
       <span class="title"> Users </span>
     </div>
   </div>
@@ -36,14 +36,14 @@
     </div>
   </div>
 
+  <span class="example-spacer"></span>
+
   <div class="user-actions">
     <lu-button [buttonConfig]="primaryImageBackgroundBtnConfig" [action]="'openCreateUserDialog'" [icon]="'add'"
-      [title]="'Create'"
-      (buttonClicked)="onClickEventReceived($event)">
+      [title]="'Create'" (buttonClicked)="onClickEventReceived($event)">
     </lu-button>
     <lu-button [buttonConfig]="greyImageBackgroundBtnConfig" [action]="'openActionUserDialog'" [icon]="'more_vert'"
-      [title]="'Actions'"
-      (buttonClicked)="onClickEventReceived($event)">
+      [title]="'Actions'" (buttonClicked)="onClickEventReceived($event)">
     </lu-button>
   </div>
 

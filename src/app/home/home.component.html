@@ -2,9 +2,7 @@
   <section class="container-tab">
     <mat-tab-group>
       <mat-tab label="Users">
-        <ng-container *ngIf="(users$ | async) as users">
-          <lu-users [users]="users"> </lu-users>
-        </ng-container>
+          <lu-users> </lu-users>
       </mat-tab>
       <mat-tab label="Pending Users"> </mat-tab>
       <mat-tab label="Leaderboard"> </mat-tab>

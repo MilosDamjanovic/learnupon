@@ -22,10 +22,16 @@
         }
       }
       .create-user-form {
-        mat-form-field {
+        .full-width {
           width: 100%;
         }
+        mat-label {
+          color: rgba(var(--primary), 1.0);
+        }
         .mat-form-field-appearance-outline .mat-form-field-outline {
+          color: rgba(var(--primary), 1.0);
+        }
+        .mat-select-placeholder {
           color: rgba(var(--primary), 1.0);
         }
       }

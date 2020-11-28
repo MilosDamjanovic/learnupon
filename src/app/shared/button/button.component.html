@@ -1,19 +1,22 @@
-<ng-container *ngTemplateOutlet="buttonConfig['text'] ? text : image">
+<ng-container *ngIf="buttonConfig">
+  <ng-container *ngTemplateOutlet="buttonConfig['hasIcon'] ? image : text">
+  </ng-container>
+
+  <!-- Text Classic Button -->
+ <ng-template #text>
+    <button type="button" [ngStyle]="buttonConfig.styles" (click)="onTextBtnClick($event)">
+      {{title}}
+    </button>
+  </ng-template>
+
+  <!-- Button with icon -->
+  <ng-template #image>
+    <span [ngStyle]="buttonConfig.iconStyles" class="material-icons">
+      {{icon}}
+    </span>
+    <button type="button" [ngStyle]="buttonConfig.styles" (click)="onImgBtnClick($event)">
+      {{title}}
+    </button>
+  </ng-template>
 </ng-container>
 
-<!-- Text Classic Button -->
-<ng-template #text>
-  <button type="button" [ngStyle]="buttonConfig.styles" (click)="onTextBtnClick($event)">
-    {{title}}
-  </button>
-</ng-template>
-
-<!-- Button with icon -->
-<ng-template #image>
-  <span [ngStyle]="buttonConfig.iconStyles" class="material-icons">
-    {{icon}}
-  </span>
-  <button type="button" [ngStyle]="buttonConfig.styles" (click)="onImgBtnClick($event)">
-    {{title}}
-  </button>
-</ng-template>

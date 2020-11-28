@@ -1,35 +1,46 @@
-import { TestBed } from '@angular/core/testing';
+import { HomeModule } from './home/home.module';
+import { UsersModule } from './users/users.module';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        UsersModule,
+        HomeModule,
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        SideNavComponent,
+        NotFoundComponent,
+        ToolbarComponent
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  describe(':', () => {
+    function setup() {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.debugElement.componentInstance;
+      return { fixture, app };
+    }
 
-  it(`should have as title 'practical-task'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('practical-task');
-  });
+    it('should create the app', waitForAsync(() => {
+      const { app } = setup();
+      expect(app).toBeTruthy();
+    }));
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('practical-task app is running!');
+    it(`should have as title 'LearnUpon'`, () => {
+      const { app } = setup();
+      expect(app.title).toEqual('LearnUpon');
+    });
   });
 });

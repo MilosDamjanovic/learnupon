@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-  @Input() buttonConfig: any;
+  @Input() buttonConfig: any | undefined;
   @Input() title = '';
   @Input() icon = '';
   @Input() action = '';

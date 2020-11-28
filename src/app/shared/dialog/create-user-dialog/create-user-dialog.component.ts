@@ -1,12 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 
-export interface CreateUserDialogData {
-  title: string;
-}
-
-export const createUserDialogConfig: MatDialogConfig<CreateUserDialogData> = {
+export const createUserDialogConfig: MatDialogConfig<any> = {
   width: '400px',
   maxWidth: '100vw',
   panelClass: 'create-dialog-panel',
@@ -25,7 +21,6 @@ export class CreateUserDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<CreateUserDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public dialogData: CreateUserDialogData,
     private fb: FormBuilder
   ) {
   }
@@ -40,7 +35,7 @@ export class CreateUserDialogComponent implements OnInit {
 
   public getFullNameErrorMessage(): string {
     if (this.lnameControl.hasError('required') || this.fnameControl.hasError('required')) {
-      return 'You must enter your firs and last name.';
+      return 'You must enter your first name.';
     }
     return '';
   }
@@ -54,7 +49,7 @@ export class CreateUserDialogComponent implements OnInit {
 
   public getPasswordErrorMessage(): string {
     if (this.passwordControl.hasError('required')) {
-      return 'You must enter your password data.';
+      return 'You must enter your password.';
     }
     if (this.passwordControl?.errors && this.passwordControl?.errors?.actualLength < 8) {
       return 'Password must contain at least 8 characters.';
@@ -109,7 +104,6 @@ export class CreateUserDialogComponent implements OnInit {
     if (!this.form.valid) {
       return;
     }
-    // TODO return to this
     this.dialogRef.close({ User: this.form.value });
   }
 

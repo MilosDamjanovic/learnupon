@@ -30,7 +30,7 @@
           <input type="password" matInput formControlName="password" placeholder="Password" name="password" required>
           <mat-error *ngIf="passwordControl.invalid">{{getPasswordErrorMessage()}}</mat-error>
         </mat-form-field>
-        <mat-form-field class="no-line">
+        <mat-form-field appearance="outline" class="full-width">
           <mat-select formControlName="language" placeholder="Choose your language">
             <mat-option *ngFor="let lang of languages" [value]="lang" (click)="onSelectedLang(lang)">
               <span> {{ lang }} </span>

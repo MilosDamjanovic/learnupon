@@ -22,10 +22,10 @@ export class HttpService {
 
   private handleError(error: HttpErrorResponse | any): Observable<any> {
     const err = error.error;
-    return throwError(error);
+    return throwError(err);
   }
 
-  get headers(): any {
+  private get headers(): any {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
