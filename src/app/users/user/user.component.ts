@@ -1,17 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { User, UserItemResponse } from 'src/app/model/user.model';
+import { UserItemResponse } from 'src/app/model/user.model';
 
 @Component({
   selector: 'lu-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  styleUrls: ['./user.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent implements OnInit {
-  @Input()
-  user!: UserItemResponse;
 
-  constructor(private sanitizer: DomSanitizer) { }
+  private _user!: UserItemResponse;
+
+  @Input()
+  get user(): UserItemResponse {
+    return this._user;
+  }
+  set user(val) {
+    if (this._user !== val) {
+      this.changeDetectionRef.markForCheck();
+    }
+    this._user = val;
+  }
+
+  constructor(private sanitizer: DomSanitizer, private changeDetectionRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }

@@ -1,3 +1,5 @@
+@import 'theme';
+
 .user-item {
   display: flex;
   align-items: stretch;
@@ -30,12 +32,11 @@
         padding-left: 1.2rem;
         .username {
           color: rgba(var(--primary), 1);
-          font-weight: 500;
-          font-size: 1.2rem;
-          letter-spacing: 0.039rem;
+          @include primary-text();
+          @include truncate();
         }
         .email {
-          font-size: 1rem;
+          @include secondary-text();
           opacity: 0.8;
         }
         span {
@@ -57,9 +58,8 @@
       justify-content: center;
       align-items: center;
       .number {
-        font-size: 1.4rem;
+        @include primary-text();
         color: rgb(var(--primary), 1);
-        font-weight: 500;
         margin-right: 0.4rem;
       }
       .property {

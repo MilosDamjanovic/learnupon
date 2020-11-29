@@ -1,3 +1,5 @@
+@import 'theme';
+
 .nav-user-info {
   margin-left: 6rem;
   .company {
@@ -6,11 +8,9 @@
       width: 30px;
     }
     .title {
+      @include h1();
       padding-left: 0.8rem;
-      font-size: 2.4rem;
-      font-weight: 600;
       color: white;
-      letter-spacing: 0.089rem;
     }
   }
 

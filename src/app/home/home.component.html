@@ -2,10 +2,20 @@
   <section class="container-tab">
     <mat-tab-group>
       <mat-tab label="Users">
-          <lu-users> </lu-users>
+          <ng-template matTabContent>
+            <lu-users> </lu-users>
+          </ng-template>
+          </mat-tab>
+          <mat-tab label="Pending Users">
+            <ng-template matTabContent>
+              <lu-not-found></lu-not-found>
+            </ng-template>
       </mat-tab>
-      <mat-tab label="Pending Users"> </mat-tab>
-      <mat-tab label="Leaderboard"> </mat-tab>
+      <mat-tab label="Leaderboard">
+        <ng-template matTabContent>
+          <lu-not-found></lu-not-found>
+        </ng-template>
+      </mat-tab>
     </mat-tab-group>
   </section>
 </section>

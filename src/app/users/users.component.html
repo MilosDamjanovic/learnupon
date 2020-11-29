@@ -5,7 +5,7 @@
     </lu-filter>
   </div>
   <section class="user-data">
-    <ng-container *ngFor="let user of filteredUsers">
+    <ng-container *ngFor="let user of filteredUsers; trackBy: trackByFn">
       <lu-user [user]="user"> </lu-user>
     </ng-container>
   </section>

@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./users.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UsersComponent implements OnInit, OnDestroy {
+export class UsersComponent implements OnDestroy, OnInit {
   private unsubscribe$: Subject<any> = new Subject();
   private users: UserItemResponse[] = [];
   public filteredUsers: UserItemResponse[] = [];
@@ -52,20 +52,24 @@ export class UsersComponent implements OnInit, OnDestroy {
               }
             ))
         )
-      ).subscribe(users => {
+    )
+      .subscribe(users => {
         this.users = [...users];
         this.filteredUsers = [...users];
         this.changeDetectorRef.detectChanges();
       });
   }
 
+  trackByFn(i: number, item: any): any {
+    return item;
+  }
+
   selectAllUsers(selected: boolean): void {
-    if (this.users.every(user => user.isSelected === true)) {
-      this.users.forEach(user => { user.isSelected = selected; });
-    }
-    else {
-      this.users.forEach(user => { user.isSelected = selected; });
-    }
+    this.filteredUsers = this.users.map(u => {
+      u.isSelected = selected;
+      return { ...u };
+    });
+    this.changeDetectorRef.markForCheck();
   }
 
   filterUsers(queryString: string): void {
@@ -73,12 +77,14 @@ export class UsersComponent implements OnInit, OnDestroy {
       const userData = `${first_name} ${last_name} ${email} `.toLocaleLowerCase();
       return userData.includes(queryString.toLocaleLowerCase());
     });
+    this.changeDetectorRef.markForCheck();
   }
 
   sortAllUsers(): void {
-    this.users.sort((a, b) => {
+    this.filteredUsers.sort((a, b) => {
       return a.first_name.localeCompare(b.first_name, 'en', { sensitivity: 'base' });
     });
+    this.changeDetectorRef.detectChanges();
   }
 
   createUser(userReq: UserReq): void {
@@ -88,7 +94,7 @@ export class UsersComponent implements OnInit, OnDestroy {
         next: this.handleSuccessReq.bind(this),
         error: this.handleError.bind(this)
       });
-
+    this.changeDetectorRef.detectChanges();
   }
 
   private handleSuccessReq(response: { id: number }): void {

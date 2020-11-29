@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -20,7 +19,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    NotFoundComponent,
     SideNavComponent,
    ],
   imports: [

@@ -16,7 +16,7 @@ export interface UserItemResponse {
   last_name: string;
   first_name: string;
   id: number;
-  isSelected?: boolean; // client side property
+  isSelected: boolean; // client side property
   sign_in_count: number;
   number_of_enrollments: number;
   number_of_enrollments_accessed: number;

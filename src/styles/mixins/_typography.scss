@@ -1,0 +1,36 @@
+@mixin primary-font-regular() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@mixin primary-font-medium() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+@mixin primary-font-bold() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+@mixin h1() {
+  @include primary-font-bold();
+  font-size: 2.6rem;
+  letter-spacing: 0.049rem;
+}
+
+@mixin primary-text() {
+  @include primary-font-medium();
+  font-size: 1.5rem;
+}
+
+@mixin secondary-text() {
+  @include primary-font-regular();
+  font-size: 1.2rem;
+}
+
+@mixin button() {
+  @include primary-font-regular();
+  font-size: 1.6rem;
+  letter-spacing: 0.049rem;
+}

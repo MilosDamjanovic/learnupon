@@ -6,11 +6,6 @@
 	max-width: 100%;
 }
 
-@mixin break-all {
-	white-space: normal;
-	word-break: break-all;
-}
-
 @mixin no-select() {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;

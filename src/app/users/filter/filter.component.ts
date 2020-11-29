@@ -2,7 +2,7 @@ import { ButtonService } from './../../shared/button/button.service';
 import { UserReq } from './../../model/user.model';
 import { CreateUserDialogComponent, createUserDialogConfig } from './../../shared/dialog/create-user-dialog/create-user-dialog.component';
 import { DialogService } from './../../shared/dialog/dialog.service';
-import { Component, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnDestroy, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {
@@ -41,7 +41,7 @@ export class FilterComponent implements OnDestroy {
   };
 
   public transparentBackgroundBtnConfig = {
-    styles: this.btnService.createBtn(defaultBtnConf)(backgroundTransparent)(borderBtn)({}),
+    styles: this.btnService.createBtn(defaultBtnConf)(backgroundTransparent)(borderBtn)(null),
     hasIcon: false
   };
 
@@ -72,8 +72,8 @@ export class FilterComponent implements OnDestroy {
     }
   }
 
-  public onInputChange(value: string): void {
-    this.filteredUser.emit(value);
+  public onInputChange(event: any): void {
+    this.filteredUser.emit((event.target as HTMLInputElement).value);
   }
 
   private openCreateUserDialog(): void {

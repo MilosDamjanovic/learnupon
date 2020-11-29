@@ -4,7 +4,6 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -19,7 +18,6 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         SideNavComponent,
-        NotFoundComponent,
         ToolbarComponent
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]

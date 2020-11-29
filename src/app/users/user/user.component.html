@@ -1,8 +1,7 @@
 <section class="user-item">
-
   <section class="user-info">
     <div class="checkbox">
-      <mat-checkbox class="example-margin" [(ngModel)]="user.isSelected"></mat-checkbox>
+      <mat-checkbox class="example-margin" [checked]="user.isSelected"></mat-checkbox>
     </div>
     <div class="user">
       <img class="avatar" [src]="getSafeAvatar('https://placekitten.com/g/200/300')" alt="user-avatar" />
@@ -15,7 +14,6 @@
 
   <section class="icons">
     <div class="icon articles">
-      <!-- NUMBERS AS VALUES FROM SUBJECTS THINK ABOUT IT! -->
       <span class="number"> {{user.number_of_enrollments}} </span>
       <span class="property material-icons">format_align_justify</span>
     </div>

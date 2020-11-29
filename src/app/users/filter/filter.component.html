@@ -1,5 +1,4 @@
 <section class="filter-by-something">
-  <!-- COLOR MAT INK BAR OF THE TABS-->
 
   <div class="select-all-users">
     <mat-checkbox (change)="onSelectAll($event)"> </mat-checkbox>
@@ -17,7 +16,7 @@
           search
         </span>
       </div>
-      <input type="text" (input)="onInputChange($event.target.value)" class="filter-users" placeholder="Search..." />
+      <input type="text" (input)="onInputChange($event)" class="filter-users" placeholder="Search..." />
     </div>
 
     <div class="create-or-filter">

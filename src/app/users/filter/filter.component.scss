@@ -1,7 +1,6 @@
 .filter-by-something {
   display: grid;
   width: inherit;
-  // grid-template-columns: repeat(6, 1fr);
   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   padding: 2.4rem 0.8rem;
   .select-all-users {

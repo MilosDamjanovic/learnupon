@@ -1,12 +1,10 @@
 export const defaultBtnConf = {
   width: '12rem',
-  fontWeight: '500',
   textDecoration: 'none',
   position: 'relative',
   boxShadow: 'none',
   overflow: 'auto',
   borderRadius: 'var(--border-radius)',
-  fontSize: '1.6rem',
   height: '2.8rem',
   letterSpacing: '0.04rem',
   outline: '0',

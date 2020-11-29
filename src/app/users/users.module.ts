@@ -21,7 +21,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatMenuModule,
     MatButtonModule,
     ButtonModule,
-    FormsModule,
     UsersRoutingModule,
     MatCheckboxModule,
     CreateUserDialogModule
