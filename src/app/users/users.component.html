@@ -1,11 +1,11 @@
 <section class="users">
   <div class="filter">
-    <lu-filter [numberOfUsers]="users.length" (sortAllUsers)="sortAllUsers()" (selectAllUsers)="selectAllUsers($event)"
-      (createNewUser)="createUser($event)">
+    <lu-filter [numberOfUsers]="filteredUsers.length" (sortAllUsers)="sortAllUsers()"
+      (selectAllUsers)="selectAllUsers($event)" (createNewUser)="createUser($event)" (filteredUser)="filterUsers($event)">
     </lu-filter>
   </div>
   <section class="user-data">
-    <ng-container *ngFor="let user of users">
+    <ng-container *ngFor="let user of filteredUsers">
       <lu-user [user]="user"> </lu-user>
     </ng-container>
   </section>

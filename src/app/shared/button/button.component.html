@@ -3,7 +3,7 @@
   </ng-container>
 
   <!-- Text Classic Button -->
- <ng-template #text>
+  <ng-template #text>
     <button type="button" [ngStyle]="buttonConfig.styles" (click)="onTextBtnClick($event)">
       {{title}}
     </button>
@@ -11,12 +11,13 @@
 
   <!-- Button with icon -->
   <ng-template #image>
-    <span [ngStyle]="buttonConfig.iconStyles" class="material-icons">
-      {{icon}}
+    <span class="container" (click)="onImgBtnClick($event)">
+      <span [ngStyle]="buttonConfig.iconStyles" class="material-icons">
+        {{icon}}
+      </span>
+      <button type="button" [ngStyle]="buttonConfig.styles" (click)="onImgBtnClick($event)">
+        {{title}}
+      </button>
     </span>
-    <button type="button" [ngStyle]="buttonConfig.styles" (click)="onImgBtnClick($event)">
-      {{title}}
-    </button>
   </ng-template>
 </ng-container>
-

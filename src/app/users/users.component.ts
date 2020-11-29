@@ -12,7 +12,8 @@ import { Subject } from 'rxjs';
 })
 export class UsersComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<any> = new Subject();
-  public users: UserItemResponse[] = [];
+  private users: UserItemResponse[] = [];
+  public filteredUsers: UserItemResponse[] = [];
 
   constructor(
     private httpService: HttpService,
@@ -52,7 +53,8 @@ export class UsersComponent implements OnInit, OnDestroy {
             ))
         )
       ).subscribe(users => {
-        this.users = users;
+        this.users = [...users];
+        this.filteredUsers = [...users];
         this.changeDetectorRef.detectChanges();
       });
   }
@@ -64,6 +66,13 @@ export class UsersComponent implements OnInit, OnDestroy {
     else {
       this.users.forEach(user => { user.isSelected = selected; });
     }
+  }
+
+  filterUsers(queryString: string): void {
+    this.filteredUsers = this.users.filter(({ first_name, last_name, email }) => {
+      const userData = `${first_name} ${last_name} ${email} `.toLocaleLowerCase();
+      return userData.includes(queryString.toLocaleLowerCase());
+    });
   }
 
   sortAllUsers(): void {

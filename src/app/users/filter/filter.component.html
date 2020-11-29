@@ -17,7 +17,7 @@
           search
         </span>
       </div>
-      <input type="text" class="filter-users" placeholder="Search..." />
+      <input type="text" (input)="onInputChange($event.target.value)" class="filter-users" placeholder="Search..." />
     </div>
 
     <div class="create-or-filter">

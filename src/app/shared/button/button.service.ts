@@ -9,6 +9,4 @@ export class ButtonService {
 
   public createBtn = (x: any) => (y: any) => (z: any) => (j: any) => ({ ...x, ...y, ...z, ...j });
 
-  public createImageBtn = (x: any) => (y: any) => (z: any) => (j: any) => ({ ...x, ...y, ...z, ...j });
-
 }

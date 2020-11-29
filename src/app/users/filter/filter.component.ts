@@ -27,6 +27,7 @@ export class FilterComponent implements OnDestroy {
   @Output() selectAllUsers = new EventEmitter<boolean>();
   @Output() sortAllUsers = new EventEmitter<boolean>();
   @Output() createNewUser = new EventEmitter<UserReq>();
+  @Output() filteredUser = new EventEmitter<string>();
 
   constructor(
     private dialogService: DialogService,
@@ -69,6 +70,10 @@ export class FilterComponent implements OnDestroy {
     if (event === 'sort') {
       this.sortAllUsers.emit(true);
     }
+  }
+
+  public onInputChange(value: string): void {
+    this.filteredUser.emit(value);
   }
 
   private openCreateUserDialog(): void {

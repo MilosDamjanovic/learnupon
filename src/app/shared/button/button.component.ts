@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() title = '';
   @Input() icon = '';
   @Input() action = '';
-  @Output() buttonClicked = new EventEmitter<any>();
+  @Output() buttonClicked = new EventEmitter<string>();
 
   constructor() { }
 
